@@ -2,7 +2,7 @@
   "required": true,
   "package": "com.ludwici.carpetvariants.mixin",
   "compatibilityLevel": "JAVA_21",
-  "refmap": "modid.refmap.json",
+  "refmap": "carpetvariants.refmap.json",
   "mixins": [
     "BlockItemMixin",
     "BlockBehaviourMixin"
