@@ -29,7 +29,7 @@ public class CarpetReplacer {
             put("green_carpet", GREEN_CARPET_VARIANT);
             put("red_carpet", RED_CARPET_VARIANT);
             put("black_carpet", BLACK_CARPET_VARIANT);
-            put("moss_block", MOSS_CARPET_VARIANT);
+            put("moss_carpet", MOSS_CARPET_VARIANT);
         }
     };
 
