@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "package": "com.ludwici.carpetvariants.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "refmap": "modid.refmap.json",
+  "mixins": [
+    "BlockItemMixin",
+    "BlockBehaviourMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "minVersion": "0.8"
+}
