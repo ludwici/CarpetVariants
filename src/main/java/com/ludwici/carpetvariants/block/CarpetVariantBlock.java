@@ -223,6 +223,8 @@ public class CarpetVariantBlock extends CarpetBlock {
         if (blockstate.is(this)) {
             blockstate1 = blockstate;
             flag = true;
+        } else if (blockstate.getBlock() instanceof CarpetBlock) {
+            blockstate1 = this.defaultBlockState().setValue(DOWN, true).setValue(FACE_COUNT, 1);
         }
         else {
             blockstate1 = this.defaultBlockState();
