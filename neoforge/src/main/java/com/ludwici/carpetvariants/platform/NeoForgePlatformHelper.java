@@ -1,0 +1,27 @@
+package com.ludwici.carpetvariants.platform;
+
+import com.ludwici.carpetvariants.platform.services.IPlatformHelper;
+import net.neoforged.fml.ModList;
+import net.neoforged.fml.loading.FMLLoader;
+
+/**
+ * The platform service implementation for NeoForge.
+ */
+public class NeoForgePlatformHelper implements IPlatformHelper {
+
+    @Override
+    public String getPlatformName() {
+        return "Neoforge";
+    }
+
+    @Override
+    public boolean isModLoaded(String modId) {
+        return ModList.get().isLoaded(modId);
+    }
+
+    @Override
+    public boolean isDevelopmentEnvironment() {
+        return !FMLLoader.isProduction();
+    }
+
+}
