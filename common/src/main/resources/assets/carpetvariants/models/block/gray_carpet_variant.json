@@ -1,0 +1,6 @@
+{
+  "parent": "carpetvariants:block/carpet_north",
+  "textures": {
+    "wool": "minecraft:block/gray_wool"
+  }
+}
