@@ -1,4 +1,4 @@
-package com.ludwici.carpetvariants.platform;
+package com.ludwici.carpetvariants.fabric.platform;
 
 import com.ludwici.carpetvariants.platform.services.IRegistryHelper;
 import net.minecraft.world.level.block.Block;
@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.ludwici.carpetvariants.registry.BlockRegistry.*;
+import static com.ludwici.carpetvariants.fabric.registry.BlockRegistry.*;
 
 public class FabricRegistryHelper implements IRegistryHelper {
     
@@ -33,20 +33,10 @@ public class FabricRegistryHelper implements IRegistryHelper {
         replaceMap.put("black_carpet", BLACK_CARPET_VARIANT);
         replaceMap.put("moss_carpet", MOSS_CARPET_VARIANT);
     }
-    
-    @Override
-    public List<Block> getAllCarpets() {
-        return List.of();
-    }
 
     @Override
     public Map<String, Block> getReplaceMap() {
         return replaceMap;
     }
 
-//    @Override
-//    public Block replace(Block block) {
-//        String name = BuiltInRegistries.BLOCK.getKey(block).getPath();
-//        return replaceMap.get(name);
-//    }
 }

@@ -1,6 +1,6 @@
-package com.ludwici.carpetvariants;
+package com.ludwici.carpetvariants.fabric;
 
-import com.ludwici.carpetvariants.registry.BlockRegistry;
+import com.ludwici.carpetvariants.fabric.registry.BlockRegistry;
 import net.fabricmc.api.ModInitializer;
 
 public final class CarpetVariantsModFabric implements ModInitializer {

@@ -1,8 +1,8 @@
-package com.ludwici.carpetvariants.datagen;
+package com.ludwici.carpetvariants.forge.datagen;
 
 import com.ludwici.carpetvariants.CarpetVariantsMod;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.data.PackOutput;
+import net.minecraft.core.Registry;
+import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -11,13 +11,12 @@ import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
-import static com.ludwici.carpetvariants.registry.BlockRegistry.*;
+import static com.ludwici.carpetvariants.forge.registry.BlockRegistry.*;
 import static net.minecraft.world.level.block.Blocks.*;
 
 public class CVBlockStateProvider extends BlockStateProvider {
-
-    public CVBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
-        super(output, CarpetVariantsMod.MODID, exFileHelper);
+    public CVBlockStateProvider(DataGenerator gen, ExistingFileHelper exFileHelper) {
+        super(gen, CarpetVariantsMod.MODID, exFileHelper);
     }
 
     @Override
@@ -60,6 +59,6 @@ public class CVBlockStateProvider extends BlockStateProvider {
     }
 
     protected ResourceLocation key(Block block) {
-        return BuiltInRegistries.BLOCK.getKey(block);
+        return Registry.BLOCK.getKey(block);
     }
 }

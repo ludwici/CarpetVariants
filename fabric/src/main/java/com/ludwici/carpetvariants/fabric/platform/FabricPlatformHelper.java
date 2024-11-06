@@ -1,4 +1,4 @@
-package com.ludwici.carpetvariants.platform;
+package com.ludwici.carpetvariants.fabric.platform;
 
 import com.ludwici.carpetvariants.platform.services.IPlatformHelper;
 import net.fabricmc.loader.api.FabricLoader;

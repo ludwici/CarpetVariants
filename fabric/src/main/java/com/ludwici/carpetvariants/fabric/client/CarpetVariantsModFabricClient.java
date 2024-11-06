@@ -1,4 +1,4 @@
-package com.ludwici.carpetvariants.client;
+package com.ludwici.carpetvariants.fabric.client;
 
 import net.fabricmc.api.ClientModInitializer;
 

@@ -1,88 +1,74 @@
 plugins {
-    id "org.jetbrains.gradle.plugin.idea-ext" version "1.1.7"
+    id 'dev.architectury.loom' version '1.6-SNAPSHOT' apply false
+    id 'architectury-plugin' version '3.4-SNAPSHOT'
+    id 'com.github.johnrengelman.shadow' version '8.1.1' apply false
+}
+
+architectury {
+    minecraft = project.minecraft_version
+}
+
+allprojects {
+    group = rootProject.maven_group
+    version = rootProject.mod_version
 }
 
 subprojects {
-    apply plugin: 'java'
+    apply plugin: 'dev.architectury.loom'
+    apply plugin: 'architectury-plugin'
     apply plugin: 'maven-publish'
 
-    version "$project.minecraft_version-$project.mod_version"
-
-    java.toolchain.languageVersion = JavaLanguageVersion.of(java_version)
-
-    jar {
-        manifest {
-            attributes([
-                    'Specification-Title'     : mod_id,
-                    'Specification-Vendor'    : mod_authors,
-                    'Specification-Version'   : project.jar.archiveVersion,
-                    'Implementation-Title'    : project.name,
-                    'Implementation-Version'  : project.jar.archiveVersion,
-                    'Implementation-Vendor'   : mod_authors,
-                    'Implementation-Timestamp': new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
-                    'Timestamp'               : System.currentTimeMillis(),
-                    'Built-On-Java'           : "${System.getProperty('java.vm.version')} (${System.getProperty('java.vm.vendor')})",
-                    'Built-On-Minecraft'      : minecraft_version
-            ])
-        }
+    base {
+        // Set up a suffixed format for the mod jar names, e.g. `example-fabric`.
+        archivesName = "$rootProject.archives_name-$project.name"
     }
 
     repositories {
-        mavenCentral()
-        maven {
-            name = 'Sponge / Mixin'
-            url = 'https://repo.spongepowered.org/repository/maven-public/'
-        }
+        // Add repositories to retrieve artifacts from in here.
+        // You should only use this when depending on other mods because
+        // Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
+        // See https://docs.gradle.org/current/userguide/declaring_repositories.html
+        // for more information about repositories.
+    }
+
+    loom {
+        silentMojangMappingsLicense()
     }
 
     dependencies {
-        implementation 'org.jetbrains:annotations:24.1.0'
+        minecraft "net.minecraft:minecraft:$rootProject.minecraft_version"
+        mappings loom.officialMojangMappings()
     }
 
-    processResources {
-        def expandProps = [
-                "version": version,
-                "group": project.group,
-                "java_version": java_version,
-                "minecraft_version": minecraft_version,
-                "minecraft_version_range": minecraft_version_range,
-                "fabric_version": fabric_version,
-                "fabric_loader_version": fabric_loader_version,
-                "forge_version": forge_version,
-                "forge_version_range": forge_version_range,
-                "forge_loader_version_range": forge_loader_version_range,
-                "mod_id": mod_id,
-                "mod_name": mod_name,
-                "mod_authors": mod_authors,
-                "mod_license": mod_license,
-                "mod_url": mod_url,
-                "mod_description": project.description,
-        ]
+    java {
+        // Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
+        // if it is present.
+        // If you remove this line, sources will not be generated.
+        withSourcesJar()
 
-        filesMatching(['pack.mcmeta', 'fabric.mod.json', 'META-INF/mods.toml', '*.mixins.json']) {
-            expand expandProps
-        }
-        inputs.properties(expandProps)
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
-    tasks.withType(GenerateModuleMetadata).configureEach {
-        enabled = false
+    tasks.withType(JavaCompile).configureEach {
+        it.options.release = 17
     }
 
+    // Configure Maven publishing.
     publishing {
         publications {
-            maven(MavenPublication) {
-                groupId project.group
-                artifactId project.name
-                version "$project.minecraft_version-$project.mod_version"
+            mavenJava(MavenPublication) {
+                artifactId = base.archivesName.get()
                 from components.java
             }
         }
 
+        // See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
         repositories {
-            maven {
-                url "file://" + System.getenv("local_maven")
-            }
+            // Add repositories to publish to here.
+            // Notice: This block does NOT have the same function as the block in the top level.
+            // The repositories here will be used for publishing your artifact, not for
+            // retrieving dependencies.
         }
     }
 }

@@ -1,9 +1,8 @@
-package com.ludwici.carpetvariants.datagen;
+package com.ludwici.carpetvariants.forge.datagen;
 
 import com.ludwici.carpetvariants.block.CarpetVariantBlock;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
-import net.minecraft.data.loot.BlockLootSubProvider;
-import net.minecraft.world.flag.FeatureFlags;
+import net.minecraft.data.loot.BlockLoot;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
@@ -16,17 +15,12 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePrope
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraftforge.registries.RegistryObject;
 
-import java.util.Set;
+import static com.ludwici.carpetvariants.forge.registry.BlockRegistry.*;
 
-import static com.ludwici.carpetvariants.registry.BlockRegistry.*;
-
-public class CVLootTableGenerator extends BlockLootSubProvider {
-    protected CVLootTableGenerator() {
-        super(Set.of(), FeatureFlags.REGISTRY.allFlags());
-    }
+public class CVLootTableGenerator extends BlockLoot {
 
     @Override
-    protected void generate() {
+    protected void addTables() {
         createCarpetVariantItemTable(WHITE_CARPET_VARIANT.get(), Items.WHITE_CARPET);
         createCarpetVariantItemTable(ORANGE_CARPET_VARIANT.get(), Items.ORANGE_CARPET);
         createCarpetVariantItemTable(MAGENTA_CARPET_VARIANT.get(), Items.MAGENTA_CARPET);

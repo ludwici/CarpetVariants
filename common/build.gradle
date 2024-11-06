@@ -1,34 +1,13 @@
-plugins {
-    id 'idea'
-    id 'java'
-    id 'maven-publish'
-    id 'org.spongepowered.gradle.vanilla' version '0.2.1-SNAPSHOT'
-}
-base {
-    archivesName = "${mod_id}-common"
-}
-minecraft {
-    version(minecraft_version)
-    if(file("src/main/resources/${mod_id}.accesswidener").exists()){
-        accessWideners(file("src/main/resources/${mod_id}.accesswidener"))
-    }
+architectury {
+    common rootProject.enabled_platforms.split(',')
 }
 
 dependencies {
-    compileOnly group:'org.spongepowered', name:'mixin', version:'0.8.5'
-    implementation group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.2'
-}
+    // We depend on Fabric Loader here to use the Fabric @Environment annotations,
+    // which get remapped to the correct annotations on each platform.
+    // Do NOT use other classes from Fabric Loader.
+    modImplementation "net.fabricmc:fabric-loader:$rootProject.fabric_loader_version"
 
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            artifactId base.archivesName.get()
-            from components.java
-        }
-    }
-    repositories {
-        maven {
-            url "file://" + System.getenv("local_maven")
-        }
-    }
+    // Architectury API. This is optional, and you can comment it out if you don't need it.
+    modImplementation "dev.architectury:architectury:$rootProject.architectury_api_version"
 }

@@ -1,4 +1,4 @@
-package com.ludwici.carpetvariants.registry;
+package com.ludwici.carpetvariants.forge.registry;
 
 import com.ludwici.carpetvariants.CarpetVariantsMod;
 import com.ludwici.carpetvariants.block.CarpetVariantBlock;
