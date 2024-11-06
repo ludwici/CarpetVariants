@@ -1,5 +1,6 @@
 [![curseforge](https://cf.way2muchnoise.eu/full_1035201_downloads.svg)](https://www.curseforge.com/minecraft/mc-mods/carpet-variants)
 [![Modrinth](https://img.shields.io/modrinth/dt/GOhfXKze?label=Modrinth&logo=modrinth)](https://modrinth.com/mod/carpet-variants/)
+![versions](https://cf.way2muchnoise.eu/versions/1035201.svg)
 
 ![neoforge](https://github.com/thomasglasser/thomasglasser/blob/main/files/badges/cozy/supported/neoforge_64h.png?raw=true)
 ![fabric](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/supported/fabric_64h.png)
