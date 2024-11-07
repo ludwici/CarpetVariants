@@ -10,10 +10,16 @@ import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.AlternativesEntry;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraftforge.registries.RegistryObject;
+
+import java.util.Collection;
+import java.util.Objects;
+import java.util.function.Function;
+import java.util.stream.Stream;
 
 import static com.ludwici.carpetvariants.forge.registry.BlockRegistry.*;
 
@@ -44,7 +50,7 @@ public class CVLootTableGenerator extends BlockLoot {
         this.add(block, lt -> LootTable.lootTable()
                 .withPool(LootPool.lootPool()
                         .add(AlternativesEntry.alternatives(
-                                AlternativesEntry.alternatives(
+                                alternatives(
                                         CarpetVariantBlock.FACE_COUNT.getPossibleValues(),
                                         value -> LootItem.lootTableItem(item)
                                                 .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
@@ -56,6 +62,12 @@ public class CVLootTableGenerator extends BlockLoot {
                         ))
                 )
         );
+    }
+
+    protected static <E> AlternativesEntry.Builder alternatives(Collection<E> collection, Function<E, LootPoolEntryContainer.Builder<?>> builder) {
+        Stream<E> stream = collection.stream();
+        Objects.requireNonNull(builder);
+        return new AlternativesEntry.Builder(stream.map(builder::apply).toArray(LootPoolEntryContainer.Builder[]::new));
     }
 
     @Override
