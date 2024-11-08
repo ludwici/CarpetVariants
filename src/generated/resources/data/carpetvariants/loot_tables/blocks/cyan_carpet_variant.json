@@ -1,0 +1,112 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "carpetvariants:cyan_carpet_variant",
+                  "properties": {
+                    "face_count": "0"
+                  }
+                }
+              ],
+              "count": 0
+            },
+            {
+              "function": "minecraft:set_count",
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "carpetvariants:cyan_carpet_variant",
+                  "properties": {
+                    "face_count": "1"
+                  }
+                }
+              ],
+              "count": 1
+            },
+            {
+              "function": "minecraft:set_count",
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "carpetvariants:cyan_carpet_variant",
+                  "properties": {
+                    "face_count": "2"
+                  }
+                }
+              ],
+              "count": 2
+            },
+            {
+              "function": "minecraft:set_count",
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "carpetvariants:cyan_carpet_variant",
+                  "properties": {
+                    "face_count": "3"
+                  }
+                }
+              ],
+              "count": 3
+            },
+            {
+              "function": "minecraft:set_count",
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "carpetvariants:cyan_carpet_variant",
+                  "properties": {
+                    "face_count": "4"
+                  }
+                }
+              ],
+              "count": 4
+            },
+            {
+              "function": "minecraft:set_count",
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "carpetvariants:cyan_carpet_variant",
+                  "properties": {
+                    "face_count": "5"
+                  }
+                }
+              ],
+              "count": 5
+            },
+            {
+              "function": "minecraft:set_count",
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "carpetvariants:cyan_carpet_variant",
+                  "properties": {
+                    "face_count": "6"
+                  }
+                }
+              ],
+              "count": 6
+            }
+          ],
+          "name": "minecraft:cyan_carpet"
+        }
+      ],
+      "functions": [
+        {
+          "function": "minecraft:explosion_decay"
+        }
+      ]
+    }
+  ]
+}
