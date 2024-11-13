@@ -133,7 +133,7 @@ public class CarpetVariantBlock extends CarpetBlock {
 
         for (Direction direction : pUseContext.getNearestLookingDirections()) {
             BooleanProperty booleanproperty = getPropertyForFace(direction);
-            boolean flag1 = blockstate.getValue(booleanproperty);
+            boolean flag1 = booleanproperty != null ? blockstate.getValue(booleanproperty) : false;
             if (!flag1 && same && this.canSupportAtFace(pUseContext.getLevel(), pUseContext.getClickedPos(), direction)) {
                 hasParts = true;
                 break;
