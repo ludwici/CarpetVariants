@@ -10,7 +10,7 @@ displayName="${mod_name}"
 displayURL="${mod_url}"
 authors="${mod_authors}"
 description='''${mod_description}'''
-#logoFile = ""
+logoFile = "logo.png"
 
 [[dependencies.${mod_id}]]
 modId = "neoforge"
@@ -26,5 +26,9 @@ versionRange="${minecraft_version_range}"
 ordering = "NONE"
 side = "BOTH"
 
-[[mixins]]
-config = "${mod_id}.mixins.json"
+[[dependencies.${mod_id}]]
+modId="carpetscore"
+mandatory=true
+versionRange="[1.0,)"
+ordering="AFTER"
+side="BOTH"

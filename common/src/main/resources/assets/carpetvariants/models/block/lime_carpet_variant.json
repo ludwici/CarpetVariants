@@ -1,5 +1,5 @@
 {
-  "parent": "carpetvariants:block/carpet_north",
+  "parent": "minecraft:block/carpet",
   "textures": {
     "wool": "minecraft:block/lime_wool"
   }

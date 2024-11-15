@@ -1,6 +1,7 @@
 package com.ludwici.carpetvariants.registry;
 
-import com.ludwici.carpetvariants.block.CarpetVariantBlock;
+import com.ludwici.carpetscore.CarpetsCore;
+import com.ludwici.carpetscore.api.block.CarpetVariantBlock;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -12,7 +13,6 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 
 import static com.ludwici.carpetvariants.CarpetVariantsMod.MODID;
 import static net.minecraft.resources.ResourceLocation.fromNamespaceAndPath;
-
 
 public class BlockRegistry {
 
@@ -36,7 +36,9 @@ public class BlockRegistry {
 
     private static Block registerCarpet(String name, Block orig) {
         String identifier = name + "_carpet_variant";
-        return Registry.register(BuiltInRegistries.BLOCK, fromNamespaceAndPath(MODID, name + "_carpet_variant"), new CarpetVariantBlock(orig.asItem(), BlockBehaviour.Properties.ofFullCopy(orig).setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(MODID, identifier)))));
+        Block ret = Registry.register(BuiltInRegistries.BLOCK, fromNamespaceAndPath(MODID, name + "_carpet_variant"), new CarpetVariantBlock(orig.asItem(), BlockBehaviour.Properties.ofFullCopy(orig).setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(MODID, identifier)))));
+        CarpetsCore.register(name + "_carpet", ret);
+        return ret;
     }
 
     public static void init() {}

@@ -11,7 +11,6 @@ public interface IRegistryHelper {
 
     public List<Block> getAllCarpets();
     public Map<String, Block> getReplaceMap();
-//    public Block replace(Block block);
 
     default public Block replace(Block block) {
         String name = BuiltInRegistries.BLOCK.getKey(block).getPath();
