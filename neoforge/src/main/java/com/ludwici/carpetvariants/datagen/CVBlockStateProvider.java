@@ -10,7 +10,6 @@ import static com.ludwici.carpetvariants.registry.BlockRegistry.*;
 import static net.minecraft.world.level.block.Blocks.*;
 
 public class CVBlockStateProvider extends BlockStateProvider {
-
     private final BlockStateHelper stateHelper;
     
     public CVBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
@@ -38,5 +37,4 @@ public class CVBlockStateProvider extends BlockStateProvider {
         stateHelper.createVariantCarpet(BLACK_CARPET_VARIANT.get(), BLACK_WOOL);
         stateHelper.createVariantCarpet(MOSS_CARPET_VARIANT.get(), MOSS_BLOCK);
     }
-
 }
