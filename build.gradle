@@ -28,10 +28,14 @@ subprojects {
     }
 
     repositories {
+        mavenLocal()
         mavenCentral()
         maven {
             name = 'Sponge / Mixin'
             url = 'https://repo.spongepowered.org/repository/maven-public/'
+        }
+        maven {
+            url "https://cursemaven.com"
         }
     }
 
@@ -57,6 +61,7 @@ subprojects {
                 "mod_license": mod_license,
                 "mod_url": mod_url,
                 "mod_description": project.description,
+                "carpetcore_version": carpetcore_version
         ]
 
         filesMatching(['pack.mcmeta', 'fabric.mod.json', 'META-INF/neoforge.mods.toml', '*.mixins.json']) {
