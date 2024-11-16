@@ -20,6 +20,9 @@
     ],
     "client": [
       "com.ludwici.carpetvariants.client.CarpetVariantsModFabricClient"
+    ],
+    "fabric-datagen": [
+      "com.ludwici.carpetvariants.datagen.DataGeneration"
     ]
   },
   "depends": {
