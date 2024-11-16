@@ -20,15 +20,16 @@
     ],
     "client": [
       "com.ludwici.carpetvariants.client.CarpetVariantsModFabricClient"
+    ],
+    "fabric-datagen": [
+      "com.ludwici.carpetvariants.datagen.DataGeneration"
     ]
   },
-  "mixins": [
-    "${mod_id}.mixins.json"
-  ],
   "depends": {
     "fabricloader": ">=${fabric_loader_version}",
     "minecraft": ">=${minecraft_version}",
     "java": ">=${java_version}",
-    "fabric-api": ">=${fabric_version}"
+    "fabric-api": ">=${fabric_version}",
+    "carpetscore": ">=${carpetcore_version}"
   }
 }
