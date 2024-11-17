@@ -1,30 +1,33 @@
 modLoader = "javafml"
-loaderVersion="${neo_loader_version_range}"
-#issueTrackerURL = ""
-license="${mod_license}"
+loaderVersion = "${neoforge_loader_version_range}"
+license = "${license}"
 
 [[mods]]
 modId="${mod_id}"
 version = "${version}"
 displayName="${mod_name}"
 displayURL="${mod_url}"
-authors="${mod_authors}"
-description='''${mod_description}'''
-#logoFile = ""
+logoFile="logo.png"
+authors = "${mod_author}"
+description = '''${description}'''
 
 [[dependencies.${mod_id}]]
 modId = "neoforge"
 type = "required"
-versionRange="${neo_version_range}"
+versionRange = "[${neoforge_version},)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.${mod_id}]]
 modId = "minecraft"
 type = "required"
-versionRange="${minecraft_version_range}"
+versionRange = "${minecraft_version_range}"
 ordering = "NONE"
 side = "BOTH"
 
-[[mixins]]
-config = "${mod_id}.mixins.json"
+[[dependencies.${mod_id}]]
+modId="carpetscore"
+mandatory=true
+versionRange="[1.0,)"
+ordering="AFTER"
+side="BOTH"

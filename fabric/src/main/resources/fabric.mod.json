@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
-  "id": "carpetvariants",
+  "id": "${mod_id}",
   "version": "${version}",
   "name": "${mod_name}",
-  "description": "${mod_description}",
+  "description": "${description}",
   "authors": [
-    "${mod_authors}"
+    "${mod_author}"
   ],
   "contact": {
     "homepage": "${mod_url}",
     "sources": "${mod_url}"
   },
-  "license": "${mod_license}",
+  "license": "${license}",
   "icon": "logo.png",
   "environment": "*",
   "entrypoints": {
@@ -20,15 +20,16 @@
     ],
     "client": [
       "com.ludwici.carpetvariants.client.CarpetVariantsModFabricClient"
+    ],
+    "fabric-datagen": [
+      "com.ludwici.carpetvariants.datagen.DataGeneration"
     ]
   },
-  "mixins": [
-    "${mod_id}.mixins.json"
-  ],
   "depends": {
     "fabricloader": ">=${fabric_loader_version}",
-    "minecraft": ">=${minecraft_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}",
     "java": ">=${java_version}",
-    "fabric-api": ">=${fabric_version}"
+    "carpetscore": ">=${carpetcore_version}"
   }
 }
