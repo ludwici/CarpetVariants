@@ -10,9 +10,6 @@ import java.util.stream.Collectors;
 import static com.ludwici.carpetvariants.registry.BlockRegistry.*;
 
 public class CVLootTableGenerator extends LootTableHelper {
-    protected CVLootTableGenerator() {
-        super();
-    }
 
     @Override
     protected void generate() {

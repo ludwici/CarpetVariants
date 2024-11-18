@@ -34,7 +34,7 @@ public class BlockRegistry {
 
     private static Block registerCarpet(String name, Block orig) {
         String identifier = name + "_carpet_variant";
-        Block ret = Registry.register(BuiltInRegistries.BLOCK, new ResourceLocation(MODID, name + "_carpet_variant"), new CarpetVariantBlock(orig.asItem(), BlockBehaviour.Properties.ofFullCopy(orig)));
+        Block ret = Registry.register(BuiltInRegistries.BLOCK, new ResourceLocation(MODID, identifier), new CarpetVariantBlock(orig.asItem(), BlockBehaviour.Properties.ofFullCopy(orig)));
         CarpetsCore.register(name + "_carpet", ret);
         return ret;
     }
