@@ -1,6 +1,7 @@
 package com.ludwici.carpetvariants.registry;
 
-import com.ludwici.carpetvariants.block.CarpetVariantBlock;
+import com.ludwici.carpetscore.CarpetsCore;
+import com.ludwici.carpetscore.api.block.CarpetVariantBlock;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
@@ -32,7 +33,10 @@ public class BlockRegistry {
     public static final Block MOSS_CARPET_VARIANT = registerCarpet("moss", Blocks.MOSS_CARPET);
 
     private static Block registerCarpet(String name, Block orig) {
-        return Registry.register(BuiltInRegistries.BLOCK, new ResourceLocation(MODID, name + "_carpet_variant"), new CarpetVariantBlock(orig.asItem(), BlockBehaviour.Properties.ofFullCopy(orig)));
+        String identifier = name + "_carpet_variant";
+        Block ret = Registry.register(BuiltInRegistries.BLOCK, new ResourceLocation(MODID, identifier), new CarpetVariantBlock(orig.asItem(), BlockBehaviour.Properties.ofFullCopy(orig)));
+        CarpetsCore.register(name + "_carpet", ret);
+        return ret;
     }
 
     public static void init() {}

@@ -1,12 +1,6 @@
 plugins {
-    id 'java'
-    id 'idea'
-    id 'maven-publish'
-    id 'fabric-loom' version '1.7-SNAPSHOT'
-}
-
-base {
-    archivesName = "${mod_id}-fabric"
+    id 'multiloader-loader'
+    id 'fabric-loom' version '1.6-SNAPSHOT'
 }
 
 dependencies {
@@ -14,12 +8,17 @@ dependencies {
     mappings loom.officialMojangMappings()
     modImplementation "net.fabricmc:fabric-loader:${fabric_loader_version}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}"
-    compileOnly project(":common")
+    modImplementation "curse.maven:carpets-core-1140721:5916443"
+}
+
+fabricApi {
+    configureDataGeneration()
 }
 
 loom {
-    if (project(":common").file("src/main/resources/${mod_id}.accesswidener").exists()) {
-        accessWidenerPath.set(project(":common").file("src/main/resources/${mod_id}.accesswidener"))
+    def aw = project(':common').file("src/main/resources/${mod_id}.accesswidener")
+    if (aw.exists()) {
+        accessWidenerPath.set(aw)
     }
     mixin {
         defaultRefmapName.set("${mod_id}.refmap.json")
@@ -27,23 +26,15 @@ loom {
     runs {
         client {
             client()
-            setConfigName("Fabric Client")
+            setConfigName('Fabric Client')
             ideConfigGenerated(true)
-            runDir("run")
+            runDir('runs/client')
         }
         server {
             server()
-            setConfigName("Fabric Server")
+            setConfigName('Fabric Server')
             ideConfigGenerated(true)
-            runDir("run")
+            runDir('runs/server')
         }
     }
-}
-
-tasks.withType(JavaCompile).configureEach {
-    source(project(":common").sourceSets.main.allSource)
-}
-
-processResources {
-    from project(":common").sourceSets.main.resources
 }
