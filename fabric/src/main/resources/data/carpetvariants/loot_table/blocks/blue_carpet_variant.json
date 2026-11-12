@@ -2,7 +2,6 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "bonus_rolls": 0.0,
       "entries": [
         {
           "type": "minecraft:alternatives",
@@ -12,142 +11,107 @@
               "children": [
                 {
                   "type": "minecraft:item",
-                  "conditions": [
-                    {
-                      "block": "carpetvariants:blue_carpet_variant",
-                      "condition": "minecraft:block_state_property",
-                      "properties": {
-                        "face_count": "0"
-                      }
+                  "condition": {
+                    "type": "minecraft:match_block",
+                    "blocks": "carpetvariants:blue_carpet_variant",
+                    "state": {
+                      "face_count": "0"
                     }
-                  ],
-                  "functions": [
-                    {
-                      "add": false,
-                      "count": 0.0,
-                      "function": "minecraft:set_count"
-                    }
-                  ],
+                  },
+                  "modifier": {
+                    "type": "minecraft:set_count",
+                    "count": 0
+                  },
                   "name": "minecraft:blue_carpet"
                 },
                 {
                   "type": "minecraft:item",
-                  "conditions": [
-                    {
-                      "block": "carpetvariants:blue_carpet_variant",
-                      "condition": "minecraft:block_state_property",
-                      "properties": {
-                        "face_count": "1"
-                      }
+                  "condition": {
+                    "type": "minecraft:match_block",
+                    "blocks": "carpetvariants:blue_carpet_variant",
+                    "state": {
+                      "face_count": "1"
                     }
-                  ],
-                  "functions": [
-                    {
-                      "add": false,
-                      "count": 1.0,
-                      "function": "minecraft:set_count"
-                    }
-                  ],
+                  },
+                  "modifier": {
+                    "type": "minecraft:set_count",
+                    "count": 1
+                  },
                   "name": "minecraft:blue_carpet"
                 },
                 {
                   "type": "minecraft:item",
-                  "conditions": [
-                    {
-                      "block": "carpetvariants:blue_carpet_variant",
-                      "condition": "minecraft:block_state_property",
-                      "properties": {
-                        "face_count": "2"
-                      }
+                  "condition": {
+                    "type": "minecraft:match_block",
+                    "blocks": "carpetvariants:blue_carpet_variant",
+                    "state": {
+                      "face_count": "2"
                     }
-                  ],
-                  "functions": [
-                    {
-                      "add": false,
-                      "count": 2.0,
-                      "function": "minecraft:set_count"
-                    }
-                  ],
+                  },
+                  "modifier": {
+                    "type": "minecraft:set_count",
+                    "count": 2
+                  },
                   "name": "minecraft:blue_carpet"
                 },
                 {
                   "type": "minecraft:item",
-                  "conditions": [
-                    {
-                      "block": "carpetvariants:blue_carpet_variant",
-                      "condition": "minecraft:block_state_property",
-                      "properties": {
-                        "face_count": "3"
-                      }
+                  "condition": {
+                    "type": "minecraft:match_block",
+                    "blocks": "carpetvariants:blue_carpet_variant",
+                    "state": {
+                      "face_count": "3"
                     }
-                  ],
-                  "functions": [
-                    {
-                      "add": false,
-                      "count": 3.0,
-                      "function": "minecraft:set_count"
-                    }
-                  ],
+                  },
+                  "modifier": {
+                    "type": "minecraft:set_count",
+                    "count": 3
+                  },
                   "name": "minecraft:blue_carpet"
                 },
                 {
                   "type": "minecraft:item",
-                  "conditions": [
-                    {
-                      "block": "carpetvariants:blue_carpet_variant",
-                      "condition": "minecraft:block_state_property",
-                      "properties": {
-                        "face_count": "4"
-                      }
+                  "condition": {
+                    "type": "minecraft:match_block",
+                    "blocks": "carpetvariants:blue_carpet_variant",
+                    "state": {
+                      "face_count": "4"
                     }
-                  ],
-                  "functions": [
-                    {
-                      "add": false,
-                      "count": 4.0,
-                      "function": "minecraft:set_count"
-                    }
-                  ],
+                  },
+                  "modifier": {
+                    "type": "minecraft:set_count",
+                    "count": 4
+                  },
                   "name": "minecraft:blue_carpet"
                 },
                 {
                   "type": "minecraft:item",
-                  "conditions": [
-                    {
-                      "block": "carpetvariants:blue_carpet_variant",
-                      "condition": "minecraft:block_state_property",
-                      "properties": {
-                        "face_count": "5"
-                      }
+                  "condition": {
+                    "type": "minecraft:match_block",
+                    "blocks": "carpetvariants:blue_carpet_variant",
+                    "state": {
+                      "face_count": "5"
                     }
-                  ],
-                  "functions": [
-                    {
-                      "add": false,
-                      "count": 5.0,
-                      "function": "minecraft:set_count"
-                    }
-                  ],
+                  },
+                  "modifier": {
+                    "type": "minecraft:set_count",
+                    "count": 5
+                  },
                   "name": "minecraft:blue_carpet"
                 },
                 {
                   "type": "minecraft:item",
-                  "conditions": [
-                    {
-                      "block": "carpetvariants:blue_carpet_variant",
-                      "condition": "minecraft:block_state_property",
-                      "properties": {
-                        "face_count": "6"
-                      }
+                  "condition": {
+                    "type": "minecraft:match_block",
+                    "blocks": "carpetvariants:blue_carpet_variant",
+                    "state": {
+                      "face_count": "6"
                     }
-                  ],
-                  "functions": [
-                    {
-                      "add": false,
-                      "count": 6.0,
-                      "function": "minecraft:set_count"
-                    }
-                  ],
+                  },
+                  "modifier": {
+                    "type": "minecraft:set_count",
+                    "count": 6
+                  },
                   "name": "minecraft:blue_carpet"
                 }
               ]
@@ -155,7 +119,7 @@
           ]
         }
       ],
-      "rolls": 1.0
+      "rolls": 1
     }
   ],
   "random_sequence": "carpetvariants:blocks/blue_carpet_variant"
