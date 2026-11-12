@@ -1,0 +1,7 @@
+Carpet Variants Modrinth release request
+Minecraft 26.1.2: Fabric 1.2.0 and NeoForge 1.2.1
+Minecraft 26.2: Fabric 1.2.0 and NeoForge 1.2.1
+Modrinth project GOhfXKze
+Changelog: intentionally empty
+Publication target: Modrinth only, not CurseForge
+Explicitly requested by the repository owner in this conversation.
