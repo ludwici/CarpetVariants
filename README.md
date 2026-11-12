@@ -1,4 +1,4 @@
-# Carpet Variants — Minecraft 26.1.2
+# Carpet Variants — Minecraft 26.2
 
 Separate Fabric and NeoForge sources under `fabric/` and `neoforge/`.
 

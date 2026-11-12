@@ -18,22 +18,22 @@ public class CVLootTableGenerator extends LootTableHelper {
 
     @Override
     protected void generate() {
-        createVariantItemTable(WHITE_CARPET_VARIANT, Items.WHITE_CARPET);
-        createVariantItemTable(ORANGE_CARPET_VARIANT, Items.ORANGE_CARPET);
-        createVariantItemTable(MAGENTA_CARPET_VARIANT, Items.MAGENTA_CARPET);
-        createVariantItemTable(LIGHT_BLUE_CARPET_VARIANT, Items.LIGHT_BLUE_CARPET);
-        createVariantItemTable(YELLOW_CARPET_VARIANT, Items.YELLOW_CARPET);
-        createVariantItemTable(LIME_CARPET_VARIANT, Items.LIME_CARPET);
-        createVariantItemTable(PINK_CARPET_VARIANT, Items.PINK_CARPET);
-        createVariantItemTable(GRAY_CARPET_VARIANT, Items.GRAY_CARPET);
-        createVariantItemTable(LIGHT_GRAY_CARPET_VARIANT, Items.LIME_CARPET);
-        createVariantItemTable(CYAN_CARPET_VARIANT, Items.CYAN_CARPET);
-        createVariantItemTable(PURPLE_CARPET_VARIANT, Items.PURPLE_CARPET);
-        createVariantItemTable(BLUE_CARPET_VARIANT, Items.BLUE_CARPET);
-        createVariantItemTable(BROWN_CARPET_VARIANT, Items.BROWN_CARPET);
-        createVariantItemTable(GREEN_CARPET_VARIANT, Items.GREEN_CARPET);
-        createVariantItemTable(RED_CARPET_VARIANT, Items.RED_CARPET);
-        createVariantItemTable(BLACK_CARPET_VARIANT, Items.BLACK_CARPET);
+        createVariantItemTable(WHITE_CARPET_VARIANT, Items.CARPET.white());
+        createVariantItemTable(ORANGE_CARPET_VARIANT, Items.CARPET.orange());
+        createVariantItemTable(MAGENTA_CARPET_VARIANT, Items.CARPET.magenta());
+        createVariantItemTable(LIGHT_BLUE_CARPET_VARIANT, Items.CARPET.lightBlue());
+        createVariantItemTable(YELLOW_CARPET_VARIANT, Items.CARPET.yellow());
+        createVariantItemTable(LIME_CARPET_VARIANT, Items.CARPET.lime());
+        createVariantItemTable(PINK_CARPET_VARIANT, Items.CARPET.pink());
+        createVariantItemTable(GRAY_CARPET_VARIANT, Items.CARPET.gray());
+        createVariantItemTable(LIGHT_GRAY_CARPET_VARIANT, Items.CARPET.lightGray());
+        createVariantItemTable(CYAN_CARPET_VARIANT, Items.CARPET.cyan());
+        createVariantItemTable(PURPLE_CARPET_VARIANT, Items.CARPET.purple());
+        createVariantItemTable(BLUE_CARPET_VARIANT, Items.CARPET.blue());
+        createVariantItemTable(BROWN_CARPET_VARIANT, Items.CARPET.brown());
+        createVariantItemTable(GREEN_CARPET_VARIANT, Items.CARPET.green());
+        createVariantItemTable(RED_CARPET_VARIANT, Items.CARPET.red());
+        createVariantItemTable(BLACK_CARPET_VARIANT, Items.CARPET.black());
         createVariantItemTable(MOSS_CARPET_VARIANT, Items.MOSS_CARPET);
     }
 

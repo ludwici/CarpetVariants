@@ -2,7 +2,6 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "bonus_rolls": 0.0,
       "entries": [
         {
           "type": "minecraft:alternatives",
@@ -23,12 +22,11 @@
                   ],
                   "functions": [
                     {
-                      "add": false,
                       "count": 0.0,
                       "function": "minecraft:set_count"
                     }
                   ],
-                  "name": "minecraft:lime_carpet"
+                  "name": "minecraft:light_gray_carpet"
                 },
                 {
                   "type": "minecraft:item",
@@ -43,12 +41,11 @@
                   ],
                   "functions": [
                     {
-                      "add": false,
                       "count": 1.0,
                       "function": "minecraft:set_count"
                     }
                   ],
-                  "name": "minecraft:lime_carpet"
+                  "name": "minecraft:light_gray_carpet"
                 },
                 {
                   "type": "minecraft:item",
@@ -63,12 +60,11 @@
                   ],
                   "functions": [
                     {
-                      "add": false,
                       "count": 2.0,
                       "function": "minecraft:set_count"
                     }
                   ],
-                  "name": "minecraft:lime_carpet"
+                  "name": "minecraft:light_gray_carpet"
                 },
                 {
                   "type": "minecraft:item",
@@ -83,12 +79,11 @@
                   ],
                   "functions": [
                     {
-                      "add": false,
                       "count": 3.0,
                       "function": "minecraft:set_count"
                     }
                   ],
-                  "name": "minecraft:lime_carpet"
+                  "name": "minecraft:light_gray_carpet"
                 },
                 {
                   "type": "minecraft:item",
@@ -103,12 +98,11 @@
                   ],
                   "functions": [
                     {
-                      "add": false,
                       "count": 4.0,
                       "function": "minecraft:set_count"
                     }
                   ],
-                  "name": "minecraft:lime_carpet"
+                  "name": "minecraft:light_gray_carpet"
                 },
                 {
                   "type": "minecraft:item",
@@ -123,12 +117,11 @@
                   ],
                   "functions": [
                     {
-                      "add": false,
                       "count": 5.0,
                       "function": "minecraft:set_count"
                     }
                   ],
-                  "name": "minecraft:lime_carpet"
+                  "name": "minecraft:light_gray_carpet"
                 },
                 {
                   "type": "minecraft:item",
@@ -143,12 +136,11 @@
                   ],
                   "functions": [
                     {
-                      "add": false,
                       "count": 6.0,
                       "function": "minecraft:set_count"
                     }
                   ],
-                  "name": "minecraft:lime_carpet"
+                  "name": "minecraft:light_gray_carpet"
                 }
               ]
             }
