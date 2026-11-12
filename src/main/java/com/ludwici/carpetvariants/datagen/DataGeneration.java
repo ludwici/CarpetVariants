@@ -6,7 +6,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 
-@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, modid = CarpetVariantsMod.MODID)
+@EventBusSubscriber(modid = CarpetVariantsMod.MODID)
 public class DataGeneration {
 
     @SubscribeEvent

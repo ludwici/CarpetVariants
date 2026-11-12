@@ -1,7 +1,7 @@
 plugins {
     id 'java-library'
     id 'maven-publish'
-    id 'net.neoforged.moddev' version '2.0.95'
+    id 'net.neoforged.moddev' version '2.0.96'
     id 'idea'
 }
 
@@ -80,7 +80,7 @@ configurations {
 dependencies {
     compileOnly group: 'org.spongepowered', name: 'mixin', version: '0.8.5'
 //    implementation "com.ludwici.carpetscore:${minecraft_version}:${carpetcore_version}"
-    implementation "curse.maven:carpets-core-1140721:6662984"
+    implementation "curse.maven:carpets-core-1140721:6713072"
 
 }
 
