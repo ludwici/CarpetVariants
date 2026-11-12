@@ -31,6 +31,10 @@ jobs:
       - name: Build Carpets Core common API
         working-directory: core
         run: bash ./gradlew :common:publishToMavenLocal --no-daemon
+      - name: Install Carpets Core NeoForge into Maven Local
+        if: matrix.loader == 'neoforge'
+        working-directory: core
+        run: bash ./gradlew :neoforge:publishToMavenLocal --no-daemon
       - name: Build Carpet Variants
         working-directory: variants
         run: bash ./gradlew :${{ matrix.loader }}:build --no-daemon
