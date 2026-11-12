@@ -32,3 +32,10 @@ mandatory=true
 versionRange="[1.0,)"
 ordering="AFTER"
 side="BOTH"
+
+[[dependencies.${mod_id}]]
+modId="bountifulblocks"
+mandatory=false
+versionRange="[0.9,)"
+ordering="AFTER"
+side="BOTH"

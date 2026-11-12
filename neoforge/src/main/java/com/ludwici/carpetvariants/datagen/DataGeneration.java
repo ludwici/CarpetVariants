@@ -11,7 +11,7 @@ import net.neoforged.neoforge.data.event.GatherDataEvent;
 
 import java.util.concurrent.CompletableFuture;
 
-@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, modid = CarpetVariantsMod.MODID)
+@EventBusSubscriber(modid = CarpetVariantsMod.MODID)
 public class DataGeneration {
 
     @SubscribeEvent
