@@ -1,7 +1,7 @@
 name: Build
 on:
   push:
-    branches: ['1.21.7']
+    branches: ['1.21.9']
   pull_request:
   workflow_dispatch:
 permissions:
@@ -9,7 +9,7 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: neoforge (1.21.7)
+    name: neoforge (1.21.9)
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v4
@@ -22,7 +22,7 @@ jobs:
       - name: Upload distributable JAR
         uses: actions/upload-artifact@v4
         with:
-          name: carpetvariants-neoforge-1.21.7
+          name: carpetvariants-neoforge-1.21.9
           path: |
             build/libs/*.jar
             !build/libs/*-sources.jar
