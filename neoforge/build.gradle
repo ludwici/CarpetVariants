@@ -13,7 +13,6 @@ version = mod_version
 group = mod_group_id
 
 repositories {
-    mavenLocal()
     mavenCentral()
     maven {
         url "https://cursemaven.com"
@@ -74,8 +73,7 @@ configurations {
 
 dependencies {
     compileOnly group: 'org.spongepowered', name: 'mixin', version: '0.8.5'
-//    implementation "com.ludwici.carpetscore:${minecraft_version}-neo:${carpetcore_version}"
-    implementation "com.ludwici.carpetscore:carpetscore-neo-${minecraft_version}:${carpetcore_version}"
+    implementation "curse.maven:carpets-core-1140721:${carpetscore_file_id}"
 }
 
 var generateModMetadata = tasks.register("generateModMetadata", ProcessResources) {

@@ -11,7 +11,6 @@ base {
 }
 
 repositories {
-	mavenLocal()
 	mavenCentral()
 	maven {
 		url "https://cursemaven.com"
@@ -34,8 +33,7 @@ dependencies {
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	implementation "net.fabricmc:fabric-loader:${project.loader_version}"
 	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
-//	implementation "com.ludwici.carpetscore:carpetscore-fabric-${minecraft_version}:${carpetscore_version}"
-	implementation "com.ludwici.carpetscore:carpetscore-fabric-${minecraft_version}:${carpetscore_version}"
+	implementation "curse.maven:carpets-core-1140721:${carpetscore_file_id}"
 }
 
 processResources {

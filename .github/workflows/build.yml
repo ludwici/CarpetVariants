@@ -18,19 +18,11 @@ jobs:
       - uses: actions/checkout@v4
         with:
           path: variants
-      - uses: actions/checkout@v4
-        with:
-          repository: ludwici/CarpetsCore
-          ref: '26.3'
-          path: core
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: '25'
       - uses: gradle/actions/setup-gradle@v4
-      - name: Build Carpets Core dependency
-        working-directory: core/${{ matrix.loader }}
-        run: bash ./gradlew publishToMavenLocal --no-daemon
       - name: Regenerate NeoForge resources and loot tables
         if: matrix.loader == 'neoforge'
         working-directory: variants/neoforge
