@@ -1,0 +1,47 @@
+name: Build
+on:
+  push:
+    branches: ['1.21.3']
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: ${{ matrix.loader }} (1.21.3)
+    strategy:
+      fail-fast: false
+      matrix:
+        loader: [fabric, neoforge]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: variants
+      - uses: actions/checkout@v4
+        with:
+          repository: ludwici/CarpetsCore
+          ref: '1.21.3'
+          path: core
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - uses: gradle/actions/setup-gradle@v4
+      - name: Build Carpets Core common API
+        working-directory: core
+        run: bash ./gradlew :common:publishToMavenLocal --no-daemon
+      - name: Build Carpet Variants
+        working-directory: variants
+        run: bash ./gradlew :${{ matrix.loader }}:build --no-daemon
+      - name: Upload distributable JAR
+        uses: actions/upload-artifact@v4
+        with:
+          name: carpetvariants-${{ matrix.loader }}-1.21.3
+          path: |
+            variants/${{ matrix.loader }}/build/libs/*.jar
+            !variants/${{ matrix.loader }}/build/libs/*-sources.jar
+            !variants/${{ matrix.loader }}/build/libs/*-dev.jar
+            !variants/${{ matrix.loader }}/build/libs/*-javadoc.jar
+          if-no-files-found: error
+          retention-days: 30

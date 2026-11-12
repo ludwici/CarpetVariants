@@ -6,6 +6,8 @@ import com.ludwici.carpetvariants.CarpetVariantsMod;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -14,6 +16,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class BlockRegistry {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(CarpetVariantsMod.MODID);
+    public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(CarpetVariantsMod.MODID);
 
     public static final DeferredBlock<Block> WHITE_CARPET_VARIANT = registerCarpet("white", Blocks.WHITE_CARPET);
     public static final DeferredBlock<Block> ORANGE_CARPET_VARIANT = registerCarpet("orange", Blocks.ORANGE_CARPET);
@@ -32,6 +35,14 @@ public class BlockRegistry {
     public static final DeferredBlock<Block> RED_CARPET_VARIANT = registerCarpet("red", Blocks.RED_CARPET);
     public static final DeferredBlock<Block> BLACK_CARPET_VARIANT = registerCarpet("black", Blocks.BLACK_CARPET);
     public static final DeferredBlock<Block> MOSS_CARPET_VARIANT = registerCarpet("moss", Blocks.MOSS_CARPET);
+    public static final DeferredBlock<Block> GLASS_PANE_VARIANT = registerItemBlock("glass_pane", Blocks.GLASS_PANE);
+
+    private static DeferredBlock<Block> registerItemBlock(String name, Block orig) {
+        String identifier = name + "_carpet_variant_item";
+        DeferredBlock<Block> ret = registerCarpet(name, orig);
+        ITEMS.register(identifier, () -> new BlockItem(ret.get(), new Item.Properties().setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(CarpetVariantsMod.MODID, identifier)))));
+        return ret;
+    }
 
     private static DeferredBlock<Block> registerCarpet(String name, Block orig) {
         String identifier = name + "_carpet_variant";

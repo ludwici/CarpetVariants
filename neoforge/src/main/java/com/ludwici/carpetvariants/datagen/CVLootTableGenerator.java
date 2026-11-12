@@ -34,6 +34,7 @@ public class CVLootTableGenerator extends LootTableHelper {
         createVariantItemTable(RED_CARPET_VARIANT.get(), Items.RED_CARPET);
         createVariantItemTable(BLACK_CARPET_VARIANT.get(), Items.BLACK_CARPET);
         createVariantItemTable(MOSS_CARPET_VARIANT.get(), Items.MOSS_CARPET);
+        createVariantItemTable(GLASS_PANE_VARIANT.get(), Items.GLASS_PANE);
     }
 
     @Override

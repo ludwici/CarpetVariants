@@ -3,6 +3,7 @@ package com.ludwici.carpetvariants.datagen;
 import com.ludwici.carpetscore.datagen.BlockStateHelper;
 import com.ludwici.carpetvariants.CarpetVariantsMod;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
@@ -36,5 +37,7 @@ public class CVBlockStateProvider extends BlockStateProvider {
         stateHelper.createVariantCarpet(RED_CARPET_VARIANT.get(), RED_WOOL);
         stateHelper.createVariantCarpet(BLACK_CARPET_VARIANT.get(), BLACK_WOOL);
         stateHelper.createVariantCarpet(MOSS_CARPET_VARIANT.get(), MOSS_BLOCK);
+        stateHelper.createVariantCarpet(GLASS_PANE_VARIANT.get(), ResourceLocation.withDefaultNamespace("block/glass"));
+//        cubeAll()
     }
 }

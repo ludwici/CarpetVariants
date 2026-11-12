@@ -35,7 +35,8 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 dependencies {
     implementation "net.neoforged:neoforge:${neo_version}"
-    implementation "curse.maven:carpets-core-1140721:5905822"
+//    implementation "curse.maven:carpets-core-1140721:5905822"
+    implementation "com.ludwici.carpetscore:carpetscore-neoforge-${minecraft_version}:${carpetcore_version}"
     compileOnly project(":common")
     testCompileOnly project(":common")
 }
