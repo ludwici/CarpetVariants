@@ -1,7 +1,7 @@
 package com.ludwici.carpetvariants.datagen;
 
 import com.ludwici.carpetscore.api.datagen.LootTableHelper;
-import net.minecraft.core.HolderLookup;
+import net.minecraft.data.loot.LootTableSubProvider;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -12,8 +12,8 @@ import static com.ludwici.carpetvariants.registry.BlockRegistry.*;
 import static com.ludwici.carpetvariants.registry.BlockRegistry.MOSS_CARPET_VARIANT;
 
 public class CVLootTableGenerator extends LootTableHelper {
-    protected CVLootTableGenerator(HolderLookup.Provider provider) {
-        super(provider);
+    protected CVLootTableGenerator(LootTableSubProvider.Context context) {
+        super(context);
     }
 
     @Override

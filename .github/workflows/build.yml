@@ -1,7 +1,7 @@
 name: Build
 on:
   push:
-    branches: ['26.2']
+    branches: ['26.3']
   pull_request:
   workflow_dispatch:
 permissions:
@@ -9,7 +9,7 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: ${{ matrix.loader }} (26.2)
+    name: ${{ matrix.loader }} (26.3)
     strategy:
       fail-fast: false
       matrix:
@@ -21,7 +21,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: ludwici/CarpetsCore
-          ref: '26.2'
+          ref: '26.3'
           path: core
       - uses: actions/setup-java@v4
         with:
@@ -37,7 +37,7 @@ jobs:
       - name: Upload distributable JAR
         uses: actions/upload-artifact@v4
         with:
-          name: carpetvariants-${{ matrix.loader }}-26.2
+          name: carpetvariants-${{ matrix.loader }}-26.3
           path: |
             variants/${{ matrix.loader }}/build/libs/*.jar
             !variants/${{ matrix.loader }}/build/libs/*-sources.jar
