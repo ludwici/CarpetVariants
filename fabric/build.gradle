@@ -35,7 +35,7 @@ dependencies {
 	implementation "net.fabricmc:fabric-loader:${project.loader_version}"
 	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 //	implementation "com.ludwici.carpetscore:carpetscore-fabric-${minecraft_version}:${carpetscore_version}"
-	modImplementation "com.ludwici.carpetscore:carpetscore-fabric-${minecraft_version}:${carpetscore_version}"
+	implementation "com.ludwici.carpetscore:carpetscore-fabric-${minecraft_version}:${carpetscore_version}"
 }
 
 processResources {
