@@ -8,3 +8,7 @@
 
 [![patreon-singular](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/donate/patreon-singular_64h.png)](https://www.patreon.com/ludwici)
 [![kofi-singular](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/donate/kofi-singular-alt_64h.png)](https://ko-fi.com/ludwici)
+
+## Source import and CI
+
+This branch contains the original Fabric and NeoForge sources for Minecraft 1.21.4. CI builds the NeoForge artifact against the published CarpetsCore 1.21.4 dependency. The Fabric sources are retained, but their CI build is not enabled because a corresponding CarpetsCore 1.21.4 Fabric library/source is not available in the linked CarpetsCore GitHub repository.
