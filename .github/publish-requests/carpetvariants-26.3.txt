@@ -1,0 +1,7 @@
+Carpet Variants Minecraft 26.3 / mod 1.2.2
+Release: CurseForge 1035201 and Modrinth GOhfXKze
+Loaders: Fabric and NeoForge
+Source branch: 26.3
+Source commit: d8f17d86afc4e93b3aaace77d30db15ed3c74e9e
+Changelog: intentionally empty
+This release is explicitly requested by the repository owner.
