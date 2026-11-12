@@ -1,7 +1,7 @@
 name: Build
 on:
   push:
-    branches: ['1.21.3']
+    branches: ['1.21.4']
   pull_request:
   workflow_dispatch:
 permissions:
@@ -9,7 +9,7 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: ${{ matrix.loader }} (1.21.3)
+    name: ${{ matrix.loader }} (1.21.4)
     strategy:
       fail-fast: false
       matrix:
@@ -37,7 +37,7 @@ jobs:
       - name: Upload distributable JAR
         uses: actions/upload-artifact@v4
         with:
-          name: carpetvariants-${{ matrix.loader }}-1.21.3
+          name: carpetvariants-${{ matrix.loader }}-1.21.4
           path: |
             variants/${{ matrix.loader }}/build/libs/*.jar
             !variants/${{ matrix.loader }}/build/libs/*-sources.jar

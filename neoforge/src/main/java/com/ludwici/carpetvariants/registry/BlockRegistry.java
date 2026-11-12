@@ -35,7 +35,7 @@ public class BlockRegistry {
     public static final DeferredBlock<Block> RED_CARPET_VARIANT = registerCarpet("red", Blocks.RED_CARPET);
     public static final DeferredBlock<Block> BLACK_CARPET_VARIANT = registerCarpet("black", Blocks.BLACK_CARPET);
     public static final DeferredBlock<Block> MOSS_CARPET_VARIANT = registerCarpet("moss", Blocks.MOSS_CARPET);
-    public static final DeferredBlock<Block> GLASS_PANE_VARIANT = registerItemBlock("glass_pane", Blocks.GLASS_PANE);
+//    public static final DeferredBlock<Block> GLASS_PANE_VARIANT = registerItemBlock("glass_pane", Blocks.GLASS_PANE);
 
     private static DeferredBlock<Block> registerItemBlock(String name, Block orig) {
         String identifier = name + "_carpet_variant_item";

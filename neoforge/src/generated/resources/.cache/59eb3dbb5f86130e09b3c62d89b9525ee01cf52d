@@ -1,9 +1,8 @@
-// 1.21.3	2024-11-17T21:19:39.2139581	Loot Tables
+// 1.21.4	2025-02-08T07:47:55.7098727	Loot Tables
 f44d0a6024275fb18843f694b85f6d0972e85215 data/carpetvariants/loot_table/blocks/black_carpet_variant.json
 c9a72b1683c5ab9313b488ce99f66ee0066778bd data/carpetvariants/loot_table/blocks/blue_carpet_variant.json
 25a46aeb52a484cd5e312b9ee5ca8ce35c99d0c6 data/carpetvariants/loot_table/blocks/brown_carpet_variant.json
 c48cd54a85f6356ea68264781d84d51fd6e47b2b data/carpetvariants/loot_table/blocks/cyan_carpet_variant.json
-66e70d52b172e2652d4fa6c59fbe823ce0eaee87 data/carpetvariants/loot_table/blocks/glass_pane_carpet_variant.json
 290776f0ab89d1a3b19c0aad30772e64657ede76 data/carpetvariants/loot_table/blocks/gray_carpet_variant.json
 97183faa88981fc1b824041faf8ef591d2c903df data/carpetvariants/loot_table/blocks/green_carpet_variant.json
 85f24a31eec84cb893687455c171aaf64da60e59 data/carpetvariants/loot_table/blocks/light_blue_carpet_variant.json

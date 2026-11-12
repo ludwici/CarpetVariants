@@ -1,25 +1,25 @@
 package com.ludwici.carpetvariants.datagen;
 
 import com.ludwici.carpetscore.datagen.BlockStateHelper;
-import com.ludwici.carpetvariants.CarpetVariantsMod;
+import net.minecraft.client.data.models.BlockModelGenerators;
+import net.minecraft.client.data.models.ItemModelGenerators;
+import net.minecraft.client.data.models.ModelProvider;
 import net.minecraft.data.PackOutput;
-import net.minecraft.resources.ResourceLocation;
-import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
+import static com.ludwici.carpetvariants.CarpetVariantsMod.MODID;
 import static com.ludwici.carpetvariants.registry.BlockRegistry.*;
 import static net.minecraft.world.level.block.Blocks.*;
 
-public class CVBlockStateProvider extends BlockStateProvider {
-    private final BlockStateHelper stateHelper;
-    
-    public CVBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
-        super(output, CarpetVariantsMod.MODID, exFileHelper);
-        stateHelper = new BlockStateHelper(this);
+public class CVBlockStateProvider extends ModelProvider{
+    private BlockStateHelper stateHelper;
+
+    public CVBlockStateProvider(PackOutput p_388260_) {
+        super(p_388260_, MODID);
     }
 
     @Override
-    protected void registerStatesAndModels() {
+    protected void registerModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
+        stateHelper = new BlockStateHelper(blockModels);
         stateHelper.createVariantCarpet(WHITE_CARPET_VARIANT.get(), WHITE_WOOL);
         stateHelper.createVariantCarpet(ORANGE_CARPET_VARIANT.get(), ORANGE_WOOL);
         stateHelper.createVariantCarpet(MAGENTA_CARPET_VARIANT.get(), MAGENTA_WOOL);
@@ -37,7 +37,5 @@ public class CVBlockStateProvider extends BlockStateProvider {
         stateHelper.createVariantCarpet(RED_CARPET_VARIANT.get(), RED_WOOL);
         stateHelper.createVariantCarpet(BLACK_CARPET_VARIANT.get(), BLACK_WOOL);
         stateHelper.createVariantCarpet(MOSS_CARPET_VARIANT.get(), MOSS_BLOCK);
-        stateHelper.createVariantCarpet(GLASS_PANE_VARIANT.get(), ResourceLocation.withDefaultNamespace("block/glass"));
-//        cubeAll()
     }
 }

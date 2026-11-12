@@ -2,7 +2,7 @@ plugins {
     id 'java'
     id 'idea'
     id 'maven-publish'
-    id 'fabric-loom' version '1.7-SNAPSHOT'
+    id 'fabric-loom' version '1.9-SNAPSHOT'
 }
 
 base {
@@ -10,7 +10,9 @@ base {
 }
 
 fabricApi {
-    configureDataGeneration()
+    configureDataGeneration {
+        client = true
+    }
 }
 
 dependencies {
@@ -18,7 +20,8 @@ dependencies {
     mappings loom.officialMojangMappings()
     modImplementation "net.fabricmc:fabric-loader:${fabric_loader_version}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}"
-    modImplementation "curse.maven:carpets-core-1140721:5908322"
+//    modImplementation "curse.maven:carpets-core-1140721:5908322"
+    implementation "com.ludwici.carpetscore:carpetscore-fabric-${minecraft_version}:${carpetcore_version}"
     compileOnly project(":common")
 }
 
