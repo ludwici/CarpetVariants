@@ -36,7 +36,7 @@ public class BlockRegistry {
 
     private static DeferredBlock<Block> registerCarpet(String name, Block orig) {
         String identifier = name + "_carpet_variant";
-        DeferredBlock<Block> ret = BLOCKS.register(identifier, () -> new CarpetVariantBlock(orig.asItem(), BlockBehaviour.Properties.ofFullCopy(orig).pushReaction(PushReaction.DESTROY).overrideDescription(orig.getDescriptionId()).setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(CarpetVariantsMod.MODID, identifier)))));
+        DeferredBlock<Block> ret = BLOCKS.register(identifier, () -> new CarpetVariantBlock(orig.asItem(), BlockBehaviour.Properties.ofFullCopy(orig).pushReaction(PushReaction.POPPED).overrideDescription(orig.getDescriptionId()).setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(CarpetVariantsMod.MODID, identifier)))));
         CarpetsCore.register(name + "_carpet", ret);
         return ret;
     }
