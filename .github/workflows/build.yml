@@ -1,7 +1,7 @@
 name: Build
 on:
   push:
-    branches: ['1.21.4']
+    branches: ['1.21.5']
   pull_request:
   workflow_dispatch:
 permissions:
@@ -9,39 +9,24 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: ${{ matrix.loader }} (1.21.4)
-    strategy:
-      fail-fast: false
-      matrix:
-        loader: [fabric, neoforge]
+    name: neoforge (1.21.5)
     steps:
       - uses: actions/checkout@v4
-        with:
-          path: variants
-      - uses: actions/checkout@v4
-        with:
-          repository: ludwici/CarpetsCore
-          ref: '1.21.3'
-          path: core
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: '21'
+          java-version: '25'
       - uses: gradle/actions/setup-gradle@v4
-      - name: Build Carpets Core common API
-        working-directory: core
-        run: bash ./gradlew :common:publishToMavenLocal --no-daemon
-      - name: Build Carpet Variants
-        working-directory: variants
-        run: bash ./gradlew :${{ matrix.loader }}:build --no-daemon
+      - name: Build
+        run: bash ./gradlew build --no-daemon
       - name: Upload distributable JAR
         uses: actions/upload-artifact@v4
         with:
-          name: carpetvariants-${{ matrix.loader }}-1.21.4
+          name: carpetvariants-neoforge-1.21.5
           path: |
-            variants/${{ matrix.loader }}/build/libs/*.jar
-            !variants/${{ matrix.loader }}/build/libs/*-sources.jar
-            !variants/${{ matrix.loader }}/build/libs/*-dev.jar
-            !variants/${{ matrix.loader }}/build/libs/*-javadoc.jar
+            build/libs/*.jar
+            !build/libs/*-sources.jar
+            !build/libs/*-dev.jar
+            !build/libs/*-javadoc.jar
           if-no-files-found: error
           retention-days: 30
