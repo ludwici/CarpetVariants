@@ -30,6 +30,12 @@ jobs:
       - name: Build Carpet Variants
         working-directory: variants/${{ matrix.loader }}
         run: bash ./gradlew build --no-daemon
+      - name: Validate CurseForge and Modrinth publication (dry run)
+        working-directory: variants/${{ matrix.loader }}
+        env:
+          CURSEFORGE_TOKEN: dry-run-only
+          MODRINTH_TOKEN: dry-run-only
+        run: bash ./gradlew publishMods -PpublishDryRun=true --no-daemon --stacktrace
       - name: Upload distributable JAR
         uses: actions/upload-artifact@v4
         with:

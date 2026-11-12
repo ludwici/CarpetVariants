@@ -1,6 +1,7 @@
 plugins {
 	id 'net.fabricmc.fabric-loom' version "${loom_version}"
 	id 'maven-publish'
+	id 'me.modmuss50.mod-publish-plugin' version '2.2.1'
 }
 
 version = project.mod_version
@@ -73,4 +74,35 @@ publishing {
 
 	repositories {
 	}
+}
+
+publishMods {
+    file = tasks.named("jar", Jar).flatMap { it.archiveFile }
+    changelog = ""
+    version = "${minecraft_version}-${mod_version}"
+    displayName = tasks.named("jar", Jar).flatMap { it.archiveFile }.map { it.asFile.name }
+    type = STABLE
+    modLoaders.add("fabric")
+    dryRun = providers.gradleProperty("publishDryRun").map { it.toBoolean() }.orElse(false)
+
+    curseforge {
+        projectId = "1035201"
+        accessToken = providers.environmentVariable("CURSEFORGE_TOKEN")
+        minecraftVersions.add(minecraft_version)
+        javaVersions.add(JavaVersion.VERSION_25)
+        client = true
+        server = true
+        requires("carpets-core")
+        requires("fabric-api")
+    }
+
+    modrinth {
+        projectId = "GOhfXKze"
+        accessToken = providers.environmentVariable("MODRINTH_TOKEN")
+        version = "${minecraft_version}-${mod_version}-fabric"
+        displayName = "Carpet Variants ${mod_version} (Fabric ${minecraft_version})"
+        minecraftVersions.add(minecraft_version)
+        requires("carpets-core")
+        requires("fabric-api")
+    }
 }
