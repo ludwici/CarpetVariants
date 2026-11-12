@@ -31,6 +31,10 @@ jobs:
       - name: Build Carpets Core dependency
         working-directory: core/${{ matrix.loader }}
         run: bash ./gradlew publishToMavenLocal --no-daemon
+      - name: Regenerate NeoForge resources and loot tables
+        if: matrix.loader == 'neoforge'
+        working-directory: variants/neoforge
+        run: bash ./gradlew runData --no-daemon
       - name: Build Carpet Variants
         working-directory: variants/${{ matrix.loader }}
         run: bash ./gradlew build --no-daemon
